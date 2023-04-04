@@ -4,7 +4,7 @@ import console from "console";
 const _metadataUri =
   "https://gateway.pinata.cloud/ipfs/https://gateway.pinata.cloud/ipfs/QmX2ubhtBPtYw75Wrpv6HLb1fhbJqxrnbhDo1RViW3oVoi";
 
-async function deploy(name, ...params) {
+async function deploy(name: string, ...params: [string]) {
   const contractFactory = await ethers.getContractFactory(name);
 
   return await contractFactory.deploy(...params).then((f) => f.deployed());
